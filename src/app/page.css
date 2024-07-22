@@ -1,0 +1,210 @@
+:root {
+    --body-background: black;
+    --body-background-secondary: rgb(40, 39, 39);
+    --body-color: white;
+}
+
+[data-theme="Light Theme"] {
+    --body-background: white;
+    --body-background-secondary: rgb(216, 214, 214);
+    --body-color: black;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--body-background-secondary);
+}
+
+nav {
+    background-color: var(--body-background);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    justify-content: space-between;
+}
+
+.title {
+    margin-left: 25px;
+    color: var(--body-color);
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.themeButton {
+    margin-right: 30px;
+    border: 2px solid var(--body-color);
+    background-color: var(--body-background);
+    color: var(--body-color);
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.themeButton:active {
+    background-color: rgb(105, 103, 103);
+}
+
+.searchContainer {
+    width: 30%;
+    position: relative;
+    margin-top: 2%;
+}
+
+.searchInput {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid rgb(70, 70, 70);
+    padding: 10px 15px;
+    font-size: 18px;
+    box-sizing: border-box;
+    background-color: #d3d3d3;
+}
+
+.clearButton {
+    position: absolute;
+    right: 15px;
+    top: 30%;
+    font-size: 20px;
+}
+
+input::placeholder{
+    color: #999;
+    font-style: italic;
+}
+
+.content {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageContent {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 60px 0px 60px;
+}
+
+.card {
+    width: 470px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    box-shadow: 0px 0px 10px rgb(0,0,0, 0.5);
+}
+
+.imageContainer {
+    width: 470px;
+    height: 470px;
+    background-color: black;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.image {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.cardTitle {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 8px 5px 8px;
+    color: rgb(7, 55, 160);
+}
+
+.cardId {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 8px 5px 8px;
+}
+
+.cardDescription {
+    font-size: 14px;
+    padding: 0px 8px 18px 8px;
+    line-height: 1.3rem;
+}
+
+.paginationContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    margin-bottom: 50px;
+}
+
+.pageNumber, .disabledPageNumber {
+    border: 1px solid black;
+    padding: 10px 15px;
+    margin: 0px 7px;
+    border-radius: 5px;
+    background-color: rgb(249, 249, 249);
+    cursor: pointer;
+}
+
+.pageNumber:hover {
+    background-color: rgb(182, 182, 182);
+}
+
+.pageNumber:active {
+    background-color: black;
+    color: white;
+}
+
+.disabledPageNumber {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+@media (max-width: 600px) {
+    .imageContainer {
+        width: 250px;
+        height: 250px;
+    }
+    .card {
+        width: 250px;
+    }
+    .searchContainer {
+        width: 250px;
+        margin-top: 8%;
+    }
+}
+
+.spinnerContainer, .notFoundContainer {
+    height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+}
+
+.notFound {
+    color: var(--body-color);
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
